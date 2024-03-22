@@ -27,7 +27,7 @@
                 <label>2024-01-01</label>
             </div>
             <!--일정 목록-->
-            <div class="content">
+            <div class="content"> 
                 <!--일정 리스트-->
                     <ul style="padding-left: 20px;">
                         <li class="content-li check"><input type="checkbox"></li>
