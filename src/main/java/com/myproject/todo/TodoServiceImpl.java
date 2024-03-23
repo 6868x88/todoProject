@@ -16,7 +16,18 @@ public  class TodoServiceImpl implements TodoService {
 		List<TodoDTO> todoList = todoMapper.selectTodoList();
 		return todoList;
 	}
+
+	@Override
+	public boolean deleteTodoList(Integer idx) {
+				int queryResult = 0;
+				if(idx != null) {
+					queryResult = todoMapper.deleteTodoList(idx);
+				}
+				return (queryResult == 1)? true:false;
+		}
+
 	
+
 //	@Override
 //	public boolean insertTodoList(TodoDTO para) {
 //		int queryResult = 0;
@@ -26,12 +37,5 @@ public  class TodoServiceImpl implements TodoService {
 //		return (queryResult == 1)? true:false;
 //	}
 //
-//	@Override
-//	public boolean deleteTodoList(int idx) {
-//		int queryResult = 0;
-//		if((Integer)idx != null) {
-//			queryResult = todoMapper.deleteTodoList(idx);
-//		}
-//		return (queryResult == 1)? true:false;
-//	}
+
 }
