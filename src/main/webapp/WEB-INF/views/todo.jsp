@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -19,14 +19,18 @@
 			<hr class="hr-1">
 			<form action="/todo/newTodo.do" method="get">
 				<div class="add">
-					✏️ <input name = "content" type="text" placeholder="일정 추가">
-					<button type = "submit" class="addList">+</button>
+					✏️ <input name="content" type="text" placeholder="일정 추가">
+					<button type="submit" class="addList">+</button>
 				</div>
 			</form>
 
 			<!--날짜-->
 			<div class="date">
-				<label>날짜:</label> <label>2024-01-01</label>
+				<label>오늘 날짜:</label> 
+				<label>
+				<c:set var="now" value="<%=new java.util.Date()%>" />
+				<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" type="date"/>
+				</label>
 			</div>
 
 
@@ -76,7 +80,7 @@ function deleteItem(idx){
         url:url,
         contentType:'application/json; charset=utf-8'
         }).done(function() {
-        alert('할 일을 삭제했습니다.');
+        alert('할일을 삭제했습니다.');
         window.location.href = '/';
         }).fail(function (error){
         alert(JSON.stringify(error));
