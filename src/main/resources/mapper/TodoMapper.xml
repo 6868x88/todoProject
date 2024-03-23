@@ -9,15 +9,16 @@
 		ORDER BY idx
 	</select>
 
-<!--
 	<insert id="insertTodoList" parameterType = "TodoDTO">
-		INSERT INTO todotable(
-			<include refid = "todoColumns"/>
-		) VALUES(
-			#{item}
+		INSERT INTO todotable
+		VALUES(
+			(SELECT get_seq('ID_SEQ'))
+			,"20240323"
+			,#{content}
+			,"N"
+			,"N"
 		)
 	</insert>
-	  -->	
 	  
 	  <delete id ="deleteTodoList" parameterType="int">
 	  	DELETE FROM todotable

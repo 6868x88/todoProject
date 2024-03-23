@@ -17,15 +17,19 @@
 		<div class="container">
 			<div class="todo_title">내가 해낸다 !</div>
 			<hr class="hr-1">
-			<div class="add">
-				✏️ <input type="text" placeholder="일정 추가">
-				<button class="addList">+</button>
-			</div>
+			<form action="/todo/newTodo.do" method="get">
+				<div class="add">
+					✏️ <input name = "content" type="text" placeholder="일정 추가">
+					<button type = "submit" class="addList">+</button>
+				</div>
+			</form>
 
 			<!--날짜-->
 			<div class="date">
 				<label>날짜:</label> <label>2024-01-01</label>
 			</div>
+
+
 			<!--일정 목록-->
 			<div class="content">
 				<!--일정 리스트-->
