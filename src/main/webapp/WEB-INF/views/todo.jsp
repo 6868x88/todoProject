@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -29,10 +31,11 @@
             <!--일정 목록-->
             <div class="content"> 
                 <!--일정 리스트-->
+                <c:forEach var ="contents" items="${todoList}">
                     <ul style="padding-left: 20px;">
                         <li class="content-li check"><input type="checkbox"></li>
                         <li class="content-li">
-                         프로젝트 구상하기
+                        ${contents.content }
                          <hr class="hr-2">
                         </li>
                         <li class="content-li del"><button class="del">
@@ -40,6 +43,7 @@
                         </button>
                         </li>
                     </ul>
+                    </c:forEach>
                     <ul style="padding-left: 20px;">
                         <li class="content-li check"><input type="checkbox"></li>
                         <li class="content-li">

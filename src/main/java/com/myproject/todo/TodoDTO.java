@@ -10,7 +10,7 @@ import lombok.Setter;
 public class TodoDTO {
 	private int idx;
 	private String tododate;
-	private String contents;
+	private String content;
 	private boolean isdone;
 	private boolean today;
 	
