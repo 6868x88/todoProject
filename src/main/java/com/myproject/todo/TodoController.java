@@ -30,9 +30,16 @@ public class TodoController {
 		return "redirect:/";
 	}
 
-	@GetMapping(value = "todo/newTodo.do")
+	@GetMapping(value = "/todo/newTodo.do")
 	public String insertTodoList(Model model, TodoDTO para) {
 		todoService.insertTodoList(para);
+		return "redirect:/";
+	}
+	
+	@GetMapping(value ="/todo/update.do")
+	public String updateTodoList (@RequestParam(value="idx", required = false)Integer idx) {
+		System.out.println("IsDone! : "+idx);
+		todoService.updateTodoList(idx);
 		return "redirect:/";
 	}
 

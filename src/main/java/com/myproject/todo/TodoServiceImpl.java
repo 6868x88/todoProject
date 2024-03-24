@@ -40,5 +40,15 @@ public  class TodoServiceImpl implements TodoService {
 		return (queryResult == 1)? true:false;
 	}
 
+	//목록 수정(할일 체크)
+	@Override
+	public boolean updateTodoList(Integer idx) {
+		int queryResult = 0;
+		if(idx != null) {
+			queryResult = todoMapper.updateTodoList(idx);
+		}
+		return (queryResult == 1)? true:false;
+	}
+
 
 }

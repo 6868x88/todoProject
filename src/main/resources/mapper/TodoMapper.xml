@@ -24,5 +24,12 @@
 	  	DELETE FROM todotable
 	  	where idx = #{idx}
 	  </delete>
+	  
+	  <update id="updateTodoList" parameterType="todoDTO">
+	  	UPDATE todotable
+	  	SET
+	  		isdone = "Y"
+	  	where idx = #{idx}
+	  </update>
 
 </mapper>

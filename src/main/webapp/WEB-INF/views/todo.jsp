@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css.css" rel="stylesheet" type="text/css">
+<link href="/css.css" rel="stylesheet" type="text/css">
 <title>TODO LIST</title>
 </head>
 
@@ -22,8 +22,8 @@
 				<fmt:formatDate var="today" value="${tododate}" pattern="yyyy-MM-dd"
 					type="date" />
 				<div class="add">
-					✏️ <input name="content" type="text" placeholder="일정 추가"> 
-					   <input type="hidden" name="tododate" value="${today }" />
+					✏️ <input name="content" type="text" placeholder="일정 추가"> <input
+						type="hidden" name="tododate" value="${today }" />
 					<button type="submit" class="addList">+</button>
 				</div>
 
@@ -40,8 +40,22 @@
 				<!--일정 리스트-->
 				<c:forEach var="contents" items="${todoList}">
 					<ul style="padding-left: 20px;">
-						<li class="content-li check"><input type="checkbox"></li>
-						<li class="content-li">${contents.content }
+						<li class="content-li check">
+						<c:choose>
+							<c:when test = "${contents.isdone eq 'N'}" >
+							<button class = "check_btn"
+							onclick="updateItem([[${contents.idx}]])"></button>
+							</c:when>
+							<c:otherwise>
+							<button class="checked_btn"></button>
+							</c:otherwise>
+						</c:choose>
+							
+						</li>
+						<li class="content-li">
+						<label style = "${contents.isdone == 'Y'? 'text-decoration: line-through; color:#e4e4e4cc;': 'text-decoration: none;'}">
+						       ${contents.content }
+						       </label>
 							<hr class="hr-2">
 						</li>
 						<li class="content-li del">
@@ -81,12 +95,30 @@ function deleteItem(idx){
         url:url,
         contentType:'application/json; charset=utf-8'
         }).done(function() {
-        alert('할일을 삭제했습니다.');
         window.location.href = '/';
         }).fail(function (error){
         alert(JSON.stringify(error));
         });
        }
+ 
+
+function updateItem(idx){
+	    console.log(idx)
+	    const url = "/todo/update.do?idx="+idx
+	    $.ajax({
+	        type:'get',
+	        url:url,
+	        contentType:'application/json; charset=utf-8'
+	        }).done(function() {
+	        window.location.href = '/';
+	        }).fail(function (error){
+	        alert(JSON.stringify(error));
+	        });
+	
+}
+
+	       
+	 
 </script>
 
 </html>

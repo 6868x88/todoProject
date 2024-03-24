@@ -89,6 +89,7 @@ input[type=text] {
     overflow: auto;
 }
 
+
 .content-li {
     /* text-align: center; */
     color: #2567ca;
@@ -127,18 +128,23 @@ hr.hr-2{
     border-top: 1px solid #2567ca;
 }
 
-input[type=checkbox] {
-    appearance: none;
+.check_btn {
+	border: none;
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    cursor: pointer;
     background-color: #e4e4e4cc;
 }
 
-input[type=checkbox]:checked {
-    background-color: #579aff;
+
+.checked_btn{
+	border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+	background-color: #2567ca;
 }
+
 
 /*일정 결과*/
 .result {

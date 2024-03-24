@@ -9,4 +9,5 @@ public interface TodoMapper {
 	public List<TodoDTO> selectTodoList();
 	public int insertTodoList(TodoDTO params);
 	public int deleteTodoList(Integer idx);
+	public int updateTodoList(Integer idx);
 }
