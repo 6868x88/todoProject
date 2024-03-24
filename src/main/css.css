@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'UhBeeSe_hyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSe_hyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ownglyph_meetme-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Ownglyph_meetme-Rg';
+}
+
+
+.todo_body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/*리스트 전체*/
+.container {
+    border: 5px;
+    width: 500px;
+    height: 750px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 253, 239);
+}
+
+.todo_title {
+    font-family: 'UhBeeSe_hyun';
+    text-align: center;
+    font-size: 32px;
+    color: #2567ca;
+    margin-top: 2%;
+}
+
+/*일정 추가*/
+.add {
+    margin: 20px 40px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+input[type=text] {
+    background-color: rgba(238, 238, 238, 0.918);
+    padding: 0.7rem 0.7rem;
+    margin: 0px 10px;
+    width: 75%;
+    border: none;
+}
+
+.addList {
+    top: 50%;
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    border: 0;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50%;
+    background-color: #579aff;
+}
+
+.addList:hover {
+    background-color: #2567ca;
+}
+
+/*날짜*/
+.date{
+    text-align: right;
+    color:#2567ca;
+    padding-right: 50px;
+}
+
+/*일정 목록*/
+.content {
+    margin-top: 30px;
+    padding: 0 30px;
+    height: 300px;
+    overflow: auto;
+}
+
+
+.content-li {
+    /* text-align: center; */
+    color: #2567ca;
+    list-style:none;
+    font-size: 20px;
+    float: left;
+}
+
+.content-li.check{
+    margin: 0 10px 0 0;
+}
+
+.content-li.del{
+    list-style:none;
+    margin-left: 20px;
+}
+
+.del{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+}
+
+.del:hover {
+    background-color: #ebebeb;
+}
+
+.del_img{
+    width: 20px;
+    margin-bottom: 10px;
+}
+
+hr.hr-2{
+    width: 310px;
+    border-top: 1px solid #2567ca;
+}
+
+.check_btn {
+	border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #e4e4e4cc;
+}
+
+
+.checked_btn{
+	border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+	background-color: #2567ca;
+}
+
+
+/*일정 결과*/
+.result {
+    position: absolute;
+    height: 180px;
+    width: 500px;
+    bottom: 0;
+    text-align: center;
+}
+
+hr.hr-1 {
+    border: 0;
+    border-bottom: 2px dashed #eee;
+    background: #2567ca;
+}
+
+input[type=radio] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #e4e4e4cc;
+}
+
+input[type=radio]:checked {
+    background-color: #579aff;
+}

@@ -56,6 +56,7 @@
 						<label style = "${contents.isdone == 'Y'? 'text-decoration: line-through; color:#e4e4e4cc;': 'text-decoration: none;'}">
 						       ${contents.content }
 						       </label>
+						   <label style="font-size:15px; color:#e4e4e4cc">- ${contents.tododate }</label>
 							<hr class="hr-2">
 						</li>
 						<li class="content-li del">
