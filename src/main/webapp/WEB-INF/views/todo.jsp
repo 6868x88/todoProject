@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -18,20 +18,21 @@
 			<div class="todo_title">내가 해낸다 !</div>
 			<hr class="hr-1">
 			<form action="/todo/newTodo.do" method="get">
+				<c:set var="tododate" value="<%=new java.util.Date()%>" />
+				<fmt:formatDate var="today" value="${tododate}" pattern="yyyy-MM-dd"
+					type="date" />
 				<div class="add">
-					✏️ <input name="content" type="text" placeholder="일정 추가">
+					✏️ <input name="content" type="text" placeholder="일정 추가"> 
+					   <input type="hidden" name="tododate" value="${today }" />
 					<button type="submit" class="addList">+</button>
 				</div>
-			</form>
 
-			<!--날짜-->
-			<div class="date">
-				<label>오늘 날짜:</label> 
-				<label>
-				<c:set var="now" value="<%=new java.util.Date()%>" />
-				<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" type="date"/>
-				</label>
-			</div>
+				<!--날짜-->
+				<div class="date">
+					<label>오늘 날짜:</label> <label> <c:out value="${today }" />
+					</label>
+				</div>
+			</form>
 
 
 			<!--일정 목록-->
@@ -87,4 +88,5 @@ function deleteItem(idx){
         });
        }
 </script>
+
 </html>

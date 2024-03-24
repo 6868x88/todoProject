@@ -13,7 +13,7 @@
 		INSERT INTO todotable
 		VALUES(
 			(SELECT get_seq('ID_SEQ'))
-			,"20240323"
+			,#{tododate}
 			,#{content}
 			,"N"
 			,"N"
