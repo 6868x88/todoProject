@@ -44,7 +44,7 @@
 						<c:choose>
 							<c:when test = "${contents.isdone eq 'N'}" >
 							<button class = "check_btn"
-							onclick="updateItem([[${contents.idx}]])"></button>
+							onclick="updateItem([[${contents.idx}]]);"></button>
 							</c:when>
 							<c:otherwise>
 							<button class="checked_btn"></button>
@@ -70,17 +70,7 @@
 
 			</div>
 
-			<!--결과-->
-			<div class="result">
-				<hr class="hr-1">
-				<span style="font-size: 20px;">오늘의 나는 。。。。</span>
-				<div>
-					<input name="todo_result" type="radio"> <img
-						src="Untitled-1.png" width="150px"> <input
-						name="todo_result" type="radio"> <img src="Untitled-2.png"
-						width="150px">
-				</div>
-			</div>
+		
 		</div>
 	</div>
 </body>
@@ -88,6 +78,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+
 function deleteItem(idx){
     console.log(idx)
     const url = "/todo/delete.do?idx="+idx
@@ -101,7 +92,6 @@ function deleteItem(idx){
         alert(JSON.stringify(error));
         });
        }
- 
 
 function updateItem(idx){
 	    console.log(idx)
@@ -115,10 +105,10 @@ function updateItem(idx){
 	        }).fail(function (error){
 	        alert(JSON.stringify(error));
 	        });
-	
+
 }
 
-	       
+
 	 
 </script>
 

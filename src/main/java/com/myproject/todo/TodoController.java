@@ -15,6 +15,8 @@ public class TodoController {
 	public TodoController(TodoService todoService) {
 		this.todoService = todoService;
 	}
+	
+	
 	@GetMapping("/")
 	public String todoList(Model model) {
 		List<TodoDTO> todoDtoList = this.todoService.getTodoList();
