@@ -12,7 +12,6 @@ public class TodoDTO {
 	private String tododate;
 	private String content;
 	private String isdone;
-	private boolean today;
 	
 	public TodoDTO() {}
 	

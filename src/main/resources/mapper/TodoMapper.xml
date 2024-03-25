@@ -4,7 +4,7 @@
 <mapper namespace="com.myproject.todo.TodoMapper">	
 
 	<select id="selectTodoList" resultType="TodoDTO">
-		SELECT idx,tododate,content,isdone,today
+		SELECT idx,tododate,content,isdone
 		FROM todotable
 		ORDER BY idx
 	</select>
@@ -15,7 +15,6 @@
 			(SELECT get_seq('ID_SEQ'))
 			,#{tododate}
 			,#{content}
-			,"N"
 			,"N"
 		)
 	</insert>
